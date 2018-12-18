@@ -324,7 +324,7 @@ const GreetingsFrame = ({ selectedAdjective, selectedVerb, timeOfDay, temperatur
         <a href="https://gmail.com">
           <FontAwesomeIcon
             icon={faEnvelope}
-            size="3x"
+            size={window.innerWidth > 640 ? "3x" : "2x"}
             color="white"
             style={{ paddingRight: "2rem" }}
           />
@@ -332,7 +332,7 @@ const GreetingsFrame = ({ selectedAdjective, selectedVerb, timeOfDay, temperatur
         <a href="https://calendar.google.com">
           <FontAwesomeIcon
             icon={faCalendarAlt}
-            size="3x"
+            size={window.innerWidth > 640 ? "3x" : "2x"}
             color="white"
             style={{ paddingRight: "2rem" }}
           />
@@ -340,7 +340,7 @@ const GreetingsFrame = ({ selectedAdjective, selectedVerb, timeOfDay, temperatur
         <a href="https://facebook.com">
           <FontAwesomeIcon
             icon={faFacebook}
-            size="3x"
+            size={window.innerWidth > 640 ? "3x" : "2x"}
             color="white"
             style={{ paddingRight: "2rem" }}
           />
@@ -348,7 +348,7 @@ const GreetingsFrame = ({ selectedAdjective, selectedVerb, timeOfDay, temperatur
         <a href="https://open.spotify.com">
           <FontAwesomeIcon
             icon={faSpotify}
-            size="3x"
+            size={window.innerWidth > 640 ? "3x" : "2x"}
             color="white"
             style={{ paddingRight: "2rem" }}
           />
@@ -356,13 +356,13 @@ const GreetingsFrame = ({ selectedAdjective, selectedVerb, timeOfDay, temperatur
         <a href="https://instagram.com">
           <FontAwesomeIcon
             icon={faInstagram}
-            size="3x"
+            size={window.innerWidth > 640 ? "3x" : "2x"}
             color="white"
-            style={{ paddingRight: "1.6rem" }}
+            style={window.innerWidth > 640 ? {  paddingRight: "1.6rem" } : {paddingRight: "2rem"}}
           />
         </a>
         <a href="https://amazon.co.uk">
-          <FontAwesomeIcon icon={faAmazon} size="3x" color="white" />
+          <FontAwesomeIcon icon={faAmazon} size={window.innerWidth > 640 ? "3x" : "2x"} color="white" />
         </a>
       </div>
     </div>
