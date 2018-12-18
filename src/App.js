@@ -255,25 +255,6 @@ const photosArray = [
   "14753950_10101285456921434_2870906413865531480_o.jpg"
 ];
 
-// const fadein = keyframes`
-// 0% { opacity: 0; }
-// 100% { opacity: 1; }
-// `;
-
-// const animation = css`
-//   ${fadein} 2s;
-// `;
-
-// const PictureFrame = styled.div`
-//   display: flex;
-//   justify-content: center;
-//   background-repeat: no-repeat;
-//   height: 100vh;
-//   width: 100%;
-//   background-position: center;
-//   background-image: ${props => props.selectedPhoto.backgroundImage};
-// `;
-
 const verbs = [
   "loves",
   "thinks about",
@@ -286,7 +267,9 @@ const verbs = [
   'enjoys kissing',
   'is enamoured with',
   'is bowled over by',
-
+  'likes being with',
+  'is inspired by',
+  'dreams about'
 ];
 
 const loveAdjectives = [
@@ -299,13 +282,15 @@ const loveAdjectives = [
   "a crazy",
   "a flabbergasting",
   "a silly",
-  "a shocking"
+  "a shocking",
+  'a considerable',
+  'an endless'
 ];
 
 const GreetingsFrame = ({ selectedAdjective, selectedVerb, timeOfDay, temperature, feelsLike, chanceOfRain }) => {
   return (
     <div className="greetingsFrame">
-      <h1 style={{marginTop: ".5rem"}}>{`Good ${timeOfDay} Petia!`}</h1>
+      <h1>{`Good ${timeOfDay} Petia!`}</h1>
       <h2>
         It's {moment().format("h:mm a")}
         <br />
@@ -314,7 +299,7 @@ const GreetingsFrame = ({ selectedAdjective, selectedVerb, timeOfDay, temperatur
       <h2>
         Temperature: {temperature}&deg;C ({feelsLike}&deg;C)
         <br />
-        Chance of rain: {chanceOfRain}%
+        Chance of rain: {chanceOfRain < 6 ? '<5' : chanceOfRain}%
       </h2>
       <h2>
         {selectedVerb &&
@@ -376,7 +361,6 @@ class App extends Component {
   };
 
   componentDidMount = async () => {
-
     const {data: {SiteRep: {DV: {Location: {Period}}}}} = await axios.get(`http://datapoint.metoffice.gov.uk/public/data/val/wxfcs/all/json/352409?res=3hourly&key=1fa41a68-8964-48cc-b5cf-d6a6e7089375`)
     this.setState({temperature: Period[0].Rep[0].T, chanceOfRain: Period[0].Rep[0].Pp, feelsLike: Period[0].Rep[0].F})
 
@@ -448,7 +432,7 @@ class App extends Component {
             width: "100vw"
           }}
         >
-          {this.state.showGreeting && (
+          {this.state.showGreeting && this.state.timeOfDay && (
             <GreetingsFrame
               selectedAdjective={this.state.selectedAdjective}
               selectedVerb={this.state.selectedVerb}
