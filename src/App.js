@@ -3,12 +3,12 @@ import axios from 'axios'
 import "./App.css";
 import moment from "moment";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope, faCalendarAlt } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faCalendarAlt, faFileAlt, faPoll, faFilm } from "@fortawesome/free-solid-svg-icons";
 import {
   faFacebook,
-  faInstagram,
+  faGoogleDrive,
   faAmazon,
-  faSpotify
+  faTwitter
 } from "@fortawesome/free-brands-svg-icons";
 
 import photosArray from './Util/photosArray'
@@ -80,6 +80,22 @@ const GreetingsFrame = ({ selectedAdjective, selectedVerb, timeOfDay, temperatur
             style={{ paddingRight: "2rem" }}
           />
         </a>
+        <a href="https://docs.google.com/">
+          <FontAwesomeIcon
+            icon={faFileAlt}
+            size={window.innerWidth > 640 ? "3x" : "2x"}
+            color="white"
+            style={window.innerWidth > 640 ? {  paddingRight: "1.6rem" } : {paddingRight: "2rem"}}
+          />
+        </a>
+        <a href="https://drive.google.com">
+          <FontAwesomeIcon
+            icon={faGoogleDrive}
+            size={window.innerWidth > 640 ? "3x" : "2x"}
+            color="white"
+            style={{ paddingRight: "2rem" }}
+          />
+        </a>
         <a href="https://facebook.com">
           <FontAwesomeIcon
             icon={faFacebook}
@@ -88,22 +104,32 @@ const GreetingsFrame = ({ selectedAdjective, selectedVerb, timeOfDay, temperatur
             style={{ paddingRight: "2rem" }}
           />
         </a>
-        <a href="https://open.spotify.com">
+        <a href="https://twitter.com">
           <FontAwesomeIcon
-            icon={faSpotify}
+            icon={faTwitter}
             size={window.innerWidth > 640 ? "3x" : "2x"}
             color="white"
             style={{ paddingRight: "2rem" }}
           />
         </a>
-        <a href="https://instagram.com">
+        <a href="https://typeform.com">
           <FontAwesomeIcon
-            icon={faInstagram}
+            icon={faPoll}
             size={window.innerWidth > 640 ? "3x" : "2x"}
             color="white"
-            style={window.innerWidth > 640 ? {  paddingRight: "1.6rem" } : {paddingRight: "2rem"}}
+            style={{ paddingRight: "2rem" }}
           />
         </a>
+        <a href="https://netflix.com">
+          <FontAwesomeIcon
+            icon={faFilm}
+            size={window.innerWidth > 640 ? "3x" : "2x"}
+            color="white"
+            style={{ paddingRight: "2rem" }}
+          />
+        </a>
+
+        
         <a href="https://amazon.co.uk">
           <FontAwesomeIcon icon={faAmazon} size={window.innerWidth > 640 ? "3x" : "2x"} color="white" />
         </a>
